@@ -17,7 +17,7 @@ mysql --user=root --password=root < ./sql/sql.sql
 
 # Copy files
 echo Copying Files
-
+rm -f /var/www/html/index.html
 cp -r ./www/* /var/www/
 
 echo Done !

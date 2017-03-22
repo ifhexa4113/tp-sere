@@ -1,10 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+/* separator */
+hr { border: 0; border-bottom: 1px dashed #ccc; background: #999; }
+
+
 .form h1 {
   font-family: "Roboto", sans-serif;
   outline: 0;
   color: #555;
   font-size: 30px;
+}
+
+.form a {
+  font-weight: bold;
 }
 
 .login-page {
@@ -34,21 +42,26 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form button, .form a {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #91908d;
   width: 100%;
   border: 0;
-  padding: 15px;
+  text-decoration: none;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   color: #FFFFFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  display: inline-block;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form button:hover,.form button:active,.form button:focus, .form a:hover, .form a:active, .form a:focus {
   background: #91908d;
   background: #cdcac5;
 }
@@ -99,5 +112,6 @@
 }
 body {
   background-image: url("../res/bg.jpeg");
+  background-position: fixed;
   background-color: #cccccc;
 }

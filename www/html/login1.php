@@ -5,6 +5,24 @@ $conn = db_connect('userdb1', 'passdb1');
 
 $user = fetch_post("user");
 $pass = fetch_post("pass");
+
+$results = null;
+// Very badly coded db :
+if ($user !== "" and $pass !== "")
+{
+	$sql = 	"SELECT * FROM db1.login WHERE username = '" .
+	$user .
+	"' AND password = '" .
+	$pass .
+	"';";
+
+	//echo $sql;
+
+	$results = $conn->query($sql);
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,33 +41,24 @@ $pass = fetch_post("pass");
 				<button>login</button>
 			</form> 
 
-			<?php
-			if ($user !== "" and $pass !== "")
-			{
-				$sql = 	"SELECT * FROM db1.login WHERE username = '" .
-				$user .
-				"' AND password = '" .
-				$pass .
-				"';";
-
-				//echo $sql;
-
-				$results = $conn->query($sql);
-
-				if ($results and $results->num_rows == 1)
-				{
-					?>
-
+			<?php if ($results and $results->num_rows == 1): ?>
+				<?php $row = $results->fetch_assoc(); ?>
+					<hr>
 					<p>
-					<b>Bienvenue</b> <?php echo $user ?>
+					<b>Welcome</b> <?php echo $row["username"] ?>
 					</p>
 
+					<p>
+						Your informations :	
+					</p>
 
-					<?php
-				}
+					<input type="text" name="user" disabled value="<?php echo $row["username"] ?>"><br>
+					<input type="password" name="pass" disabled value="<?php echo $row["password"] ?>"><br>
 
-			}
-			?>
+			<?php else: ?>
+				<hr>
+				<p>Login Failed ...</p>
+			<?php endif; ?>
 		</div>
 	</div>
 </body>
