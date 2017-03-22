@@ -13,7 +13,7 @@ fi
 
 # Database creation
 echo Creating databases
-mysql --user=root --password=root < ./sql/sql.sql &>/dev/null
+mysql --user=root --password=root < ./sql/sql.sql
 
 # Copy files
 echo Copying Files
