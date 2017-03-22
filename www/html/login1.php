@@ -55,7 +55,7 @@ if ($user !== "" and $pass !== "")
 					<input type="text" name="user" disabled value="<?php echo $row["username"] ?>"><br>
 					<input type="password" name="pass" disabled value="<?php echo $row["password"] ?>"><br>
 
-			<?php else: ?>
+			<?php elseif($results and $results->num_rows != 1): ?>
 				<hr>
 				<p>Login Failed ...</p>
 			<?php endif; ?>
