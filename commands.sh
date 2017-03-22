@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 if [[ $1 != -s ]]; then
 	apt-get update
-	apt-get install mysql-server
-	apt-get install apache2
-	sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+	apt-get -y install mysql-server
+	apt-get -y install apache2
+	apt-get -y install php libapache2-mod-php php-mcrypt php-mysql
 	cp ./php.ini /etc/php/7.0/apache2/
 	/etc/init.d/apache2 restart
 else
