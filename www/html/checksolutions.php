@@ -15,7 +15,7 @@ $results_name = $conn->query($sql);
 
 
 // Check results
-if ($name !== "" and $pass !== "")
+if ($name !== null and $pass !== null)
 {
   $sql =  "SELECT * FROM solutions.solutions WHERE name = ? AND password = ?";
   $stmt = $conn->prepare($sql);

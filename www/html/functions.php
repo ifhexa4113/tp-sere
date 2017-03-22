@@ -13,7 +13,7 @@ function db_connect($user, $pass) {
 }
 
 function fetch_post($name) {
-	$value = "";
+	$value = null;
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' and isset($_POST[$name]))
 	{
 		$value = $_POST[$name];

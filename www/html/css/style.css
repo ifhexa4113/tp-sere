@@ -48,6 +48,20 @@ hr { border: 0; border-bottom: 1px dashed #ccc; background: #999; }
   font-size: 30px;
 }
 
+.form h2 {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  color: #666;
+  font-size: 25px;
+}
+
+.form h3 {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  color: #777;
+  font-size: 20px;
+}
+
 .form a {
   font-weight: bold;
 }

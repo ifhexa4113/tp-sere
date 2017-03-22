@@ -16,6 +16,8 @@ SELECT * FROM login;
 DROP DATABASE IF EXISTS dbsearch1;
 create database dbsearch1;
 
+use dbsearch1;
+
 create table articles (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 			title TEXT CHARACTER SET utf8 COLLATE utf8_bin,
 			content TEXT CHARACTER SET utf8 COLLATE utf8_bin);
@@ -29,10 +31,10 @@ INSERT INTO articles (title, content) VALUES ("Passwords", "Please change all yo
 INSERT INTO articles (title, content) VALUES ("Lorem Ipsum", "Please Please ignore that ...");
 
 
-INSERT INTO login (username, password) VALUES ( 'bob', 'pa$$word' );
-INSERT INTO login (username, password) VALUES ( 'admin', 'Il0ve4ppl3$' );
-INSERT INTO login (username, password) VALUES ( 'alice', '123456' );
-INSERT INTO login (username, password) VALUES ( 'charles', 'NeverGonnaGiveYouUp' );
+INSERT INTO users (username, password) VALUES ( 'bob', 'pa$$word' );
+INSERT INTO users (username, password) VALUES ( 'admin', 'Il0ve4ppl3$' );
+INSERT INTO users (username, password) VALUES ( 'alice', '123456' );
+INSERT INTO users (username, password) VALUES ( 'charles', 'NeverGonnaGiveYouUp' );
 
 
 DROP USER IF EXISTS 'userdbsearch1'@'localhost';

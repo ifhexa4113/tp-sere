@@ -3,12 +3,13 @@ include 'functions.php';
 
 $conn = db_connect('userdb1', 'passdb1');
 
+
 $user = fetch_post("user");
 $pass = fetch_post("pass");
 
 $results = null;
 // Very badly coded db :
-if ($user !== "" and $pass !== "")
+if ($user !== null and $pass !== null)
 {
 	$sql = 	"SELECT * FROM db1.login WHERE username = '" .
 	$user .
