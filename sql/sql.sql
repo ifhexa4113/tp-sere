@@ -8,7 +8,7 @@ create table login (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 INSERT INTO login (username, password) VALUES ( 'bob', 'pa$$word' );
 SELECT * FROM login;
 
-DROP USER 'userdb1'@'localhost';
+DROP USER IF EXISTS 'userdb1'@'localhost';
 CREATE USER 'userdb1'@'localhost' IDENTIFIED BY 'passdb1';
 #REVOKE USAGE ON *.* FROM 'userdb1'@'localhost';
 GRANT SELECT ON db1.* TO 'userdb1'@'localhost';
