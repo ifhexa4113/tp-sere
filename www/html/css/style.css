@@ -4,6 +4,43 @@
 hr { border: 0; border-bottom: 1px dashed #ccc; background: #999; }
 
 
+.select-style {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #91908d url("../res/icon-select.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 15px 8px;
+    width: 130%;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #91908d;
+    font-weight: bold;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+/*.form select {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #d2d2d2;
+}*/
+
 .form h1 {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -112,6 +149,8 @@ hr { border: 0; border-bottom: 1px dashed #ccc; background: #999; }
 }
 body {
   background-image: url("../res/bg.jpeg");
-  background-position: fixed;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
   background-color: #cccccc;
 }

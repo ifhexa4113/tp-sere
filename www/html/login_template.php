@@ -1,3 +1,28 @@
+<?php
+include 'functions.php';
+
+$conn = db_connect('userdbsearch1', 'passdbsearch1');
+
+$user = fetch_post("user");
+$pass = fetch_post("pass");
+
+$results = null;
+// Very badly coded db :
+if ($user !== "" and $pass !== "")
+{
+  $sql =  "SELECT * FROM db1.login WHERE username = '" .
+  $user .
+  "' AND password = '" .
+  $pass .
+  "';";
+
+  //echo $sql;
+
+  $results = $conn->query($sql);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

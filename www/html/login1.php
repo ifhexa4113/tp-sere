@@ -20,9 +20,6 @@ if ($user !== "" and $pass !== "")
 
 	$results = $conn->query($sql);
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +28,7 @@ if ($user !== "" and $pass !== "")
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
-<body>
+<body style="background-image: url(res/bg2.jpeg);">
 	<div class="login-page">
 		<div class="form">
 			<h1> Login </h1>

@@ -8,9 +8,12 @@
 <div class="login-page">
   <div class="form">
   <h1>SQL Exploits</h1>
-  	<a href="login1.php">Login 1</a>
-  	<a href="login1.php">Login 2</a>
-  	<a href="login1.php">Login 3</a>
+  <hr>
+  	<h1>Login 1</h1>
+  	<p>Retrieve the admin password</p>
+  	<a href="login1.php">Attempt</a>
+  	<hr>
+  	<a href="checksolutions.php">Check your solutions</a>
   </div>
 </div>
 </body>
