@@ -2,7 +2,6 @@
 if [[ $1 != -s ]]; then
 	apt-get update
 	apt-get install mysql-server
-	mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('yourpassword');"
 	apt-get install apache2
 	sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
 	cp ./php.ini /etc/php/7.0/apache2/
