@@ -47,6 +47,36 @@ CREATE USER 'userdbsearch1'@'localhost' IDENTIFIED BY 'passdbsearch1';
 #REVOKE USAGE ON *.* FROM 'userdb1'@'localhost';
 GRANT SELECT ON dbsearch1.* TO 'userdbsearch1'@'localhost';
 
+# SEARCH 2
+DROP DATABASE IF EXISTS dbsearch2;
+create database dbsearch2;
+
+use dbsearch2;
+
+create table articles (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			title TEXT CHARACTER SET utf8 COLLATE utf8_bin,
+			content TEXT CHARACTER SET utf8 COLLATE utf8_bin);
+
+create table users (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			username CHAR(40) CHARACTER SET utf8 COLLATE utf8_bin,
+			password CHAR(40) CHARACTER SET utf8 COLLATE utf8_bin);
+
+INSERT INTO articles (title, content) VALUES ("Hacking intensifies even more", "Nothing to say");
+INSERT INTO articles (title, content) VALUES ("Website update", "Hacking is prohibited. Violators will be shot. Survivors will be shot again.");
+INSERT INTO articles (title, content) VALUES ("Lorem Ipsum", "Please Please ignore that ...");
+
+
+INSERT INTO users (username, password) VALUES ( 'bob', 'b4af804009cb036a4ccdc33431ef9ac9' ); -- password = pass1234
+INSERT INTO users (username, password) VALUES ( 'admin', '21232f297a57a5a743894a0e4a801fc3' ); -- password = admin
+INSERT INTO users (username, password) VALUES ( 'alice', 'e10adc3949ba59abbe56e057f20f883e' ); -- password = 123456
+INSERT INTO users (username, password) VALUES ( 'charles', '5f4dcc3b5aa765d61d8327deb882cf99' ); -- password = password
+
+
+DROP USER IF EXISTS 'userdbsearch2'@'localhost';
+CREATE USER 'userdbsearch2'@'localhost' IDENTIFIED BY 'passdbsearch2';
+#REVOKE USAGE ON *.* FROM 'userdb2'@'localhost';
+GRANT SELECT ON dbsearch2.* TO 'userdbsearch2'@'localhost';
+
 
 # SOLUTIONS CHECK
 

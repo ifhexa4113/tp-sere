@@ -1,8 +1,8 @@
 <?php
 include 'functions.php';
 
-$conn = db_connect('userdbsearch1', 'passdbsearch1');
-$conn->select_db("dbsearch1");
+$conn = db_connect('userdbsearch2', 'passdbsearch2');
+$conn->select_db("dbsearch2");
 
 $search = fetch_post("search");
 
@@ -19,15 +19,15 @@ if ($search !== null)
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search 1</title>
+  <title>Search 2</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body style="background-image: url(res/bg2.jpeg);">
   <div class="login-page">
     <div class="form">
-      <h1> Search 1 </h1>
-      <form action="search1.php"  method="post">
+      <h1> Search 2 </h1>
+      <form action="search2.php"  method="post">
         <input type="text" name="search" placeholder="search"><br>
         <button>search</button>
       </form>
