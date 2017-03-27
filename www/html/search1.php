@@ -10,7 +10,7 @@ $results = null;
 // Very badly coded db :
 if ($search !== null)
 {
-  $sql =  "SELECT * FROM articles WHERE title LIKE '%" .
+  $sql =  "SELECT title, content FROM articles WHERE title LIKE '%" .
   $search . "%';";
 
   $results = $conn->query($sql);
@@ -39,6 +39,9 @@ if ($search !== null)
       		<h1> <?php echo $row["title"] ?> </h1>
       		<p> <?php  echo $row["content"]?></p>
       	<?php endwhile; ?>
+
+      <?php elseif($conn->error): ?>
+      	<h3>Error : <?php echo $conn->error ?></h3>
       <?php endif; ?>
     </div>
   </div>

@@ -11,6 +11,11 @@ INSERT INTO login (username, password) VALUES ( 'alice', '123456' );
 INSERT INTO login (username, password) VALUES ( 'charles', 'cantHackMe1234' );
 SELECT * FROM login;
 
+DROP USER IF EXISTS 'userdb1'@'localhost';
+CREATE USER 'userdb1'@'localhost' IDENTIFIED BY 'passdb1';
+#REVOKE USAGE ON *.* FROM 'userdb1'@'localhost';
+GRANT SELECT ON db1.* TO 'userdb1'@'localhost';
+
 
 # SEARCH
 DROP DATABASE IF EXISTS dbsearch1;
@@ -53,6 +58,7 @@ create table solutions (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 			password CHAR(20) CHARACTER SET utf8 COLLATE utf8_bin);
 
 INSERT INTO solutions (name, password) VALUES ( 'Login 1', 'haXxX0r123' );
+INSERT INTO solutions (name, password) VALUES ( 'Search 1', 'Il0ve4ppl3$' );
 
 DROP USER IF EXISTS 'usersolu'@'localhost';
 CREATE USER 'usersolu'@'localhost' IDENTIFIED BY 'passsolu';
