@@ -1,8 +1,8 @@
 <?php
 include 'functions.php';
 
-$conn = db_connect('userdb1', 'passdb1');
-
+$conn = db_connect('userdb2', 'passdb2');
+$conn->select_db("db2");
 
 $user = fetch_post("user");
 $pass = fetch_post("pass");
@@ -11,7 +11,7 @@ $results = null;
 // Very badly coded db :
 if ($user !== null and $pass !== null)
 {
-	$sql = 	"SELECT * FROM db1.login WHERE username = '" .
+	$sql = 	"SELECT * FROM login WHERE username = '" .
 	$user .
 	"' AND password = '" .
 	$pass .
@@ -25,7 +25,7 @@ if ($user !== null and $pass !== null)
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login 1</title>
+	<title>Login 2</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
@@ -33,7 +33,7 @@ if ($user !== null and $pass !== null)
 	<div class="login-page">
 		<div class="form">
 			<h1> Login </h1>
-			<form action="login1.php"  method="post">
+			<form action="login2.php"  method="post">
 				<input type="text" name="user" placeholder="username"><br>
 				<input type="text" name="pass" placeholder="password"><br><br>
 				<button>login</button>

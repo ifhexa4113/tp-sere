@@ -16,6 +16,25 @@ CREATE USER 'userdb1'@'localhost' IDENTIFIED BY 'passdb1';
 #REVOKE USAGE ON *.* FROM 'userdb1'@'localhost';
 GRANT SELECT ON db1.* TO 'userdb1'@'localhost';
 
+#Login 2
+DROP DATABASE IF EXISTS db2;
+create database db2;
+use db2;
+create table login (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+			username CHAR(40) CHARACTER SET utf8 COLLATE utf8_bin,
+			password CHAR(40) CHARACTER SET utf8 COLLATE utf8_bin);
+
+INSERT INTO login (username, password) VALUES ( 'bob', 'pa$$w0rd' );
+INSERT INTO login (username, password) VALUES ( 'admin', '$uper$3cure');
+INSERT INTO login (username, password) VALUES ( 'alice', '123456' );
+INSERT INTO login (username, password) VALUES ( 'charles', 'cantHackMe1234' );
+SELECT * FROM login;
+
+DROP USER IF EXISTS 'userdb2'@'localhost';
+CREATE USER 'userdb2'@'localhost' IDENTIFIED BY 'passdb2';
+#REVOKE USAGE ON *.* FROM 'userdb2'@'localhost';
+GRANT SELECT ON db2.* TO 'userdb2'@'localhost';
+
 
 # SEARCH
 DROP DATABASE IF EXISTS dbsearch1;
@@ -85,10 +104,12 @@ create database solutions;
 use solutions;
 create table solutions (	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 			name CHAR(20) CHARACTER SET utf8 COLLATE utf8_bin,
-			password CHAR(20) CHARACTER SET utf8 COLLATE utf8_bin);
+			password CHAR(255) CHARACTER SET utf8 COLLATE utf8_bin);
 
 INSERT INTO solutions (name, password) VALUES ( 'Login 1', 'haXxX0r123' );
+INSERT INTO solutions (name, password) VALUES ( 'Login 2', '$uper$3cure' );
 INSERT INTO solutions (name, password) VALUES ( 'Search 1', 'Il0ve4ppl3$' );
+INSERT INTO solutions (name, password) VALUES ( 'Search 2', 'admin' );
 
 DROP USER IF EXISTS 'usersolu'@'localhost';
 CREATE USER 'usersolu'@'localhost' IDENTIFIED BY 'passsolu';

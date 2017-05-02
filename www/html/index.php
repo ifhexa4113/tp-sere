@@ -13,6 +13,10 @@
   	<p>Retrieve the admin password</p>
   	<a href="login1.php">Attempt</a>
   	<hr>
+    <h1>Login 2</h1>
+    <p>Retrieve the admin password</p>
+    <a href="login2.php">Attempt</a>
+    <hr>
     <h1>Search 1</h1>
     <p>Retrieve the admin password</p>
     <a href="search1.php">Attempt</a>
@@ -20,7 +24,6 @@
     <h1>Search 2</h1>
     <p>Retrieve the admin password</p>
     <a href="search2.php">Attempt</a>
-    <hr>
     <hr>
   	<a href="checksolutions.php">Check your solutions</a>
   </div>
