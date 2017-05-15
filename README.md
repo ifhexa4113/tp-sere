@@ -18,5 +18,3 @@ If the install process is sucessfull, you should be able to reach [localhost/ind
 
 ## Working with the project files
 It is advised to work on the project files in this folder, and not in the installation folders. To update the installed scripts (rerun SQL scripts and copy all the content of the `www` folder into `/usr/www`), simply run `sudo ./commands.sh -s`. This command will skip the installation process of the script and just update the database and files.
-
-## Testing the scripts
